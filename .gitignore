@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+
+# Production build output
+dist/
+dist-ssr/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime / cache
+.cache/
+.cache-loader/
+.eslintcache
+vite.config.ts.timestamp*
+*.tsbuildinfo
+
+# Test coverage
+coverage/
+*.lcov
+
+# Env files (keep examples)
+.env
+.env.*
+!.env.example
+
+# Editors / IDE
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# OS / misc
+.DS_Store
+*.swp
+*.swo
+.tmp
+.tmp*/
+tmp/
+
+# Typescript build info
+# (already covered by *.tsbuildinfo above)
+
+# Optional: lockfiles (uncomment to ignore; generally keep them committed)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
