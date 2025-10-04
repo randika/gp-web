@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel from './components/Carousel.jsx';
+import ImgWithFallback from './components/ImgWithFallback.jsx';
 
 const services = [
 	{
@@ -85,16 +86,7 @@ function Services() {
 			<div className="grid-3">
 				{services.map((s) => (
 					<div key={s.title} className="card service-card">
-						<img
-							loading="lazy"
-							src={s.img}
-							alt={s.alt}
-							onError={(e) => {
-								if (e.currentTarget.dataset.fallback) return;
-								e.currentTarget.dataset.fallback = '1';
-								e.currentTarget.src = '/placeholder.svg';
-							}}
-						/>
+						<ImgWithFallback loading="lazy" src={s.img} alt={s.alt} />
 						<strong>{s.title}</strong>
 						<p>{s.desc}</p>
 					</div>

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
+import ImgWithFallback from './ImgWithFallback.jsx';
 
 const slidesData = [
   {
@@ -68,7 +69,7 @@ export default function Carousel(){
       <div className="carousel-track" ref={trackRef}>
         {slidesData.map((s,i)=> (
           <div className={"slide" + (i===index? ' is-active':'')} key={i}>
-            <img {...(i===0? {fetchpriority:'high', loading:'eager'} : {loading:'lazy'})} decoding="async" src={s.image} alt={s.caption} onError={(e)=>{ if(e.currentTarget.dataset.fallback) return; e.currentTarget.dataset.fallback='1'; e.currentTarget.src= base + 'placeholder.svg'; }} />
+            <ImgWithFallback {...(i===0? {fetchpriority:'high', loading:'eager'} : {loading:'lazy'})} src={s.image} alt={s.caption} />
             <div className="slide-caption">{s.caption}</div>
           </div>
         ))}

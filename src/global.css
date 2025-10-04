@@ -39,6 +39,8 @@ footer{margin-top:40px;padding:18px 0;color:var(--muted);font-size:14px;text-ali
 .service-card img{width:100%;height:180px;object-fit:cover;border-radius:12px;margin-bottom:12px}
 .service-card strong{display:block;margin:4px 0;font-size:15px}
 .service-card p{color:var(--muted);margin:6px 0 0;font-size:14px}
+.img-skeleton{position:relative;background:linear-gradient(110deg,#eef2f7 8%,#f4f7fa 18%,#eef2f7 33%);background-size:200% 100%;animation:imgShimmer 1.1s linear infinite;object-fit:cover;color:transparent}
+@keyframes imgShimmer{to{background-position:-200% 0}}
 @media (max-width:1024px){.grid-3{grid-template-columns:repeat(2,1fr)}.carousel .slide{height:480px}}
 @media (max-width:700px){.grid-3{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}.carousel .slide{height:380px}}
 .active{color:var(--ink)}
