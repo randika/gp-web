@@ -18,6 +18,7 @@ const services = [
 ];
 
 function Header(){
+  const base = import.meta.env.BASE_URL;
   return (
     <header>
       <div className="header-inner">
@@ -29,11 +30,11 @@ function Header(){
           </div>
         </div>
         <nav aria-label="Primary">
-          <a href="/">Home</a>
-          <a className="active" href="/services.html">Services</a>
-          <a href="#doctors">Doctors</a>
-          <a href="#fees">Fees</a>
-          <a href="#contact">Contact</a>
+          <a href={base}>Home</a>
+          <a className="active" href={base + 'services.html'}>Services</a>
+          <a href={base + '#doctors'}>Doctors</a>
+          <a href={base + '#fees'}>Fees</a>
+          <a href={base + '#contact'}>Contact</a>
         </nav>
       </div>
     </header>
