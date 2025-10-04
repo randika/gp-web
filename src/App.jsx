@@ -55,34 +55,23 @@ export default function App() {
 }
 
 function Header() {
+	const base = import.meta.env.BASE_URL; // ensures correct path on GitHub Pages
 	return (
 		<header>
 			<div className="header-inner">
 				<div className="brand">
-					<div className="logo" aria-label="Southern Cross logo">
-						SC
-					</div>
+					<div className="logo" aria-label="Southern Cross logo">SC</div>
 					<div>
 						<div style={{ fontWeight: 800 }}>Southern Cross</div>
-						<div
-							style={{
-								fontSize: 13,
-								color: 'var(--muted)',
-								marginTop: 2,
-							}}
-						>
-							Medical Clinic
-						</div>
+						<div style={{ fontSize: 13, color: 'var(--muted)', marginTop: 2 }}>Medical Clinic</div>
 					</div>
 				</div>
 				<nav aria-label="Primary">
-					<a className="active" href="#home">
-						Home
-					</a>
-					<a href="#services">Services</a>
-					<a href="#doctors">Doctors</a>
-					<a href="#fees">Fees</a>
-					<a href="#contact">Contact</a>
+					<a className="active" href={base}>Home</a>
+					<a href={base + 'services.html'}>Services</a>
+					<a href={base + '#doctors'}>Doctors</a>
+					<a href={base + '#fees'}>Fees</a>
+					<a href={base + '#contact'}>Contact</a>
 				</nav>
 			</div>
 		</header>

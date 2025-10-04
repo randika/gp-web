@@ -16,6 +16,7 @@ const slidesData = [
 ];
 
 export default function Carousel(){
+  const base = import.meta.env.BASE_URL || '/';
   const containerRef = useRef(null);
   const trackRef = useRef(null);
   const [index, setIndex] = useState(0);
@@ -67,7 +68,7 @@ export default function Carousel(){
       <div className="carousel-track" ref={trackRef}>
         {slidesData.map((s,i)=> (
           <div className={"slide" + (i===index? ' is-active':'')} key={i}>
-            <img {...(i===0? {fetchpriority:'high', loading:'eager'} : {loading:'lazy'})} decoding="async" src={s.image} alt={s.caption} onError={(e)=>{ if(e.currentTarget.dataset.fallback) return; e.currentTarget.dataset.fallback='1'; e.currentTarget.src='/placeholder.svg'; }} />
+            <img {...(i===0? {fetchpriority:'high', loading:'eager'} : {loading:'lazy'})} decoding="async" src={s.image} alt={s.caption} onError={(e)=>{ if(e.currentTarget.dataset.fallback) return; e.currentTarget.dataset.fallback='1'; e.currentTarget.src= base + 'placeholder.svg'; }} />
             <div className="slide-caption">{s.caption}</div>
           </div>
         ))}
